@@ -5,10 +5,10 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <>
-      <div className="overlay-bg absolute h-[80vh] w-full bg-[url('/images/hero/travel.jpg')] bg-cover"></div>
+      <div className="overlay-bg absolute h-[82.5vh] w-full bg-[url('/images/hero/travel.jpg')] bg-cover"></div>
       <section
         id="home"
-        className="hero-bg relative h-[80vh] overflow-hidden  pb-16 pt-[120px] dark:bg-gray-dark  md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px]
+        className="hero-bg relative h-[82.5vh] overflow-hidden  pb-16 pt-[120px] dark:bg-gray-dark  md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px]
         2xl:pt-[210px]
         "
       >
@@ -32,7 +32,9 @@ const Hero = () => {
                       </span>
                     </h1>{" "}
                   </div>{" "}
-                  <h1 className="pt-4">Elevate Spiritual Journeys</h1>
+                  <h1 className="pt-4 text-[35px] md:text-[55px]">
+                    Your Journey, Our Expertise.
+                  </h1>
                 </h1>
               </div>
             </div>
