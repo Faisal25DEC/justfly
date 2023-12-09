@@ -26,7 +26,7 @@ const Hero = () => {
                       className="hidden h-[4rem] w-[5rem] md:block"
                       src="/images/logo/logo.png"
                     />{" "}
-                    <h1 className="">
+                    <h1 className="pt-6">
                       <span className="text-green-primary">
                         JUST FLY TRAVELS
                       </span>
@@ -35,15 +35,6 @@ const Hero = () => {
                   <h1 className="pt-4">Elevate Spiritual Journeys</h1>
                 </h1>
 
-                <p className="py-4 text-[14px] text-base font-semibold !leading-relaxed text-black dark:text-body-color-dark sm:text-lg md:text-[16px] md:text-xl">
-                  Elevate your pilgrimage experience with our premier travel
-                  services. As a trusted provider, we specialize in crafting
-                  seamless Hajj and Umrah packages. From secure travel
-                  arrangements to comfortable accommodations, our offerings
-                  ensure a spiritually enriching journey. Book with us for an
-                  unparalleled blend of convenience, safety, and spiritual
-                  fulfillment.
-                </p>
                 <div className="flex flex-col items-center justify-center space-y-4 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="https://nextjstemplates.com/templates/saas-starter-startup"
