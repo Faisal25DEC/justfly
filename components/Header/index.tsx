@@ -54,9 +54,9 @@ const Header = () => {
             : "absolute bg-transparent"
         }`}
       >
-        <div className="container">
-          <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
+        <div className="w-full">
+          <div className="relative m-auto  flex w-[97.5%] items-center justify-between md:w-[85%]">
+            <div className="   max-w-full  xl:mr-12">
               <Link
                 href="#home"
                 className={`header-logo  flex w-full items-center gap-[1px] ${
@@ -67,19 +67,19 @@ const Header = () => {
                   <img
                     src="/images/logo/logo.png"
                     alt="logo"
-                    className="h-16 w-20 w-full pb-[3.5px] dark:hidden"
+                    className="h-[5rem] w-[5rem] w-full pb-[3.5px] dark:hidden"
                   />
                 )}
                 {domLoaded && (
                   <img
                     src="/images/logo/logo2.png"
                     alt="logo"
-                    className="h-12  w-20 w-full dark:block"
+                    className="h-14  w-[5.25rem] w-full dark:block"
                   />
                 )}
               </Link>
             </div>
-            <div className="flex items-center justify-between px-4">
+            <div className="flex items-center justify-between ">
               <div>
                 <button
                   onClick={navbarToggleHandler}

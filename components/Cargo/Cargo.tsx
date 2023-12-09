@@ -14,14 +14,32 @@ const Cargo = () => {
         // description="We understand that unexpected events can occur during your travels, and your well-being is our utmost priority. In the unfortunate event of unexpected changes to your travel plans, we are here to guide you through the process of addressing these situations."
       />
 
-      <section className="py-16 md:py-20 lg:py-28">
+      <section className="py-4 md:py-6">
         <div className="container">
           <div className="-mx-4 mb-16 flex flex-wrap items-center justify-between md:mb-20 lg:mb-28">
-            <div className="w-full px-4 py-12 lg:w-1/2">
+            <div className="m-auto w-[97.5%] py-12 md:w-[85%] lg:w-1/2">
               <SectionTitle
                 // center
-                title="Best Cargo Services"
-                paragraph="Our commitment to excellence sets us apart in the world of cargo and logistics. Here are some key reasons why you should partner with us."
+                title={
+                  <h1 className="pb-4 text-center text-[36px] font-bold">
+                    Best <span className="text-green-primary">Cargo</span>{" "}
+                    Services
+                  </h1>
+                }
+                paragraph={
+                  <p className="font-medium">
+                    In the realm of cargo and logistics, our unwavering
+                    commitment to excellence stands as the cornerstone of our
+                    distinction. Choosing us as your logistics partner ensures
+                    an elevated experience marked by precision, global
+                    connectivity, cutting-edge technology, tailored solutions,
+                    sustainability, and a culture of continuous improvement. Our
+                    dedication to setting industry standards reflects not just a
+                    commitment but a guiding principle embedded in every facet
+                    of our service, promising you a partnership that transcends
+                    expectations
+                  </p>
+                }
                 mb="44px"
               />
             </div>
@@ -52,7 +70,7 @@ const featuresData: Feature[] = [
     id: 1,
     title: "Reliable transportation",
     paragraph:
-      "We provide a comprehensive range of cargo transportation solutions, ensuring your cargo reaches its destination on time and in optimal condition. Our fleet of vehicles is well-maintained and equipped to handle various types of cargo",
+      "We offer comprehensive cargo transportation solutions, ensuring timely and pristine delivery. Our well-maintained fleet handles diverse cargo types, guaranteeing reliable service for your shipments.",
   },
   {
     id: 2,

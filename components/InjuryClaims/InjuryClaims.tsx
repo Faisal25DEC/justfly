@@ -16,14 +16,32 @@ const InjuryAndClaims = () => {
     <>
       <Breadcrumb pageName="Injury claims" />
 
-      <section className="py-16 md:py-20 lg:py-28">
+      <section className="py-4 md:py-8 ">
         <div className="container">
           <div className="border-b border-body-color/[.15] dark:border-white/[.15] ">
             <div className="-mx-4 flex flex-wrap items-center">
-              <div className="w-full px-4 py-12 lg:w-1/2">
+              <div className="w-full px-4 py-12 md:px-12 lg:w-1/2">
                 <SectionTitle
-                  title="Your Safety is Our Priority"
-                  paragraph="We understand that unexpected events can occur during your travels, and your well-being is our utmost priority. In the unfortunate event of unexpected changes to your travel plans, we are here to guide you through the process of addressing these situations."
+                  title={
+                    <h1 className="pb-4 text-center text-[36px] font-bold">
+                      Your <span className="text-green-primary">Safety</span> Is
+                      Our Priority
+                    </h1>
+                  }
+                  paragraph={
+                    <p className="text-center font-medium ">
+                      At Justfly, our commitment to your well-being extends
+                      beyond seamless travel experiences. We understand that
+                      unexpected events can disrupt even the most carefully
+                      planned journeys. In such instances, our dedicated team is
+                      here to provide guidance and support, navigating you
+                      through the necessary steps to address any unforeseen
+                      changes to your travel plans. Whether it is a sudden
+                      change in itinerary, flight disruptions, or other
+                      unexpected challenges, rest assured that your comfort and
+                      safety remain our top priority.
+                    </p>
+                  }
                   mb="44px"
                 />
               </div>
@@ -39,7 +57,7 @@ const InjuryAndClaims = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 py-16 md:grid-cols-2 md:py-20 lg:grid-cols-3 lg:py-28">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 py-4 md:grid-cols-2 md:py-8 lg:grid-cols-3 lg:py-12">
             {featuresData.map((feature, idx) => (
               <SingleFeature key={idx} feature={feature} />
             ))}
@@ -65,7 +83,7 @@ const featuresData = [
     ),
     title: "Reporting an Incident",
     paragraph:
-      "If you experience any unexpected incidents during your travels, it&lsquo;s important to notify us as soon as possible. Contact our dedicated support team at [Emergency Contact Number] to report the details of the incident. We are available 24/7 to assist you and provide the necessary support",
+      "In case of unexpected incidents while traveling, contact our 24/7 support at +01258925. Swift communication enables efficient assistance, ensuring your safety and minimizing disruptions to your travel experience.",
   },
   {
     id: 1,
@@ -79,7 +97,7 @@ const featuresData = [
     ),
     title: "Trip Modifications and Refunds",
     paragraph:
-      "In the event of unexpected changes to your travel plans, such as flight cancellations or itinerary alterations, our team is here to assist you. We will work tirelessly to find suitable alternatives or assist you in obtaining refunds where applicable. Communication is key, so keep us informed of any issues you encounter during your journey.",
+      "For unexpected travel changes like cancellations or alterations, our team is ready to assist. We'll work to find alternatives or help with refunds. Keep us informed for seamless support during your journey.",
   },
   {
     id: 1,
@@ -93,6 +111,6 @@ const featuresData = [
     ),
     title: "Filing a Claim",
     paragraph:
-      "If you need to file a claim for a travel-related incident, our claims process is designed to be straightforward. Contact our customer support team, and they will guide you through the necessary steps and documentation required to initiate a claim.",
+      "For a travel-related claim, our simple process ensures ease. Contact our support team, and they'll guide you through the necessary steps and documentation to initiate your claim efficiently.",
   },
 ];

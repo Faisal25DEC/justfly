@@ -5,22 +5,38 @@ import featuresData from "./featuresData";
 const Features = () => {
   return (
     <>
-      <section id="features" className="section-bg py-16 md:py-20 lg:py-28">
-        <div className="container">
-          <SectionTitle
-            title="Why Choose Us?"
-            paragraph="At [Your Travel Business Name], we understand that travel planning can be overwhelming. That's why we're here to simplify the process for you. Here are some compelling reasons to choose us for your travel needs:"
-            center
-            className="mb-32 max-w-2xl"
-          />
+      <div className="section-bg">
+        <section
+          id="features"
+          className=" m-auto w-[97.5%] py-4 md:w-[85%] md:py-8 "
+        >
+          <div className="container">
+            <SectionTitle
+              title={
+                <h1 className="pb-8 text-[44px] font-bold">
+                  Why Choose <span className="text-green-primary">Us</span>
+                </h1>
+              }
+              paragraph={
+                <p className="font-medium">
+                  At <span className="text-green-primary">Justfly Travels</span>
+                  , we understand that travel planning can be overwhelming. That
+                  is why we are here to simplify the process for you. Here are
+                  some compelling reasons to choose us for your travel needs
+                </p>
+              }
+              center
+              className="max-w-2xl pb-[4rem]"
+            />
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
-            ))}
+            <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+              {featuresData.map((feature) => (
+                <SingleFeature key={feature.id} feature={feature} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 };

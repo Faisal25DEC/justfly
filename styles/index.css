@@ -19,7 +19,7 @@
 .hero-bg {
   background: linear-gradient(
     180deg,
-    rgba(244, 251, 217, 0.256),
+    rgba(222, 251, 217, 0.256),
     rgba(215, 243, 217, 0.256)
   );
 }
@@ -52,4 +52,10 @@
 }
 .green-primary {
   background-color: rgba(226, 253, 231, 0.159);
+}
+.text-green-primary {
+  color: #229e43;
+}
+.card-shadow {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

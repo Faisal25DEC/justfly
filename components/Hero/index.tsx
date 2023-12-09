@@ -14,42 +14,40 @@ const Hero = () => {
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
+            <div className=" w-[100%]">
               <div
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-5 flex items-center justify-center gap-2  text-3xl font-bold leading-tight text-neutral-800 dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  <Image
-                    src="/icons/hero/kaaba.png"
-                    width={50}
-                    height={50}
-                    alt="kaaba"
-                  />{" "}
-                  <h1 className="flex items-center gap-2">
-                    Welcome To{" "}
+                <h1 className="w-full  py-4    text-[80px] font-bold leading-tight text-neutral-800 dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+                  <div className=" flex items-center justify-center gap-2">
                     <img
-                      src="/images/hero/brand-name-1.png"
-                      className="h-15 w-[10rem]"
-                    />
-                    <img
-                      src="/images/hero/brand-name-2.png"
-                      className="h-15 w-[10rem]"
-                    />
-                  </h1>
+                      alt="logo"
+                      className="h-[4rem] w-[5rem]"
+                      src="/images/logo/logo.png"
+                    />{" "}
+                    <h1 className="">
+                      <span className="text-green-primary">
+                        JUST FLY TRAVELS
+                      </span>
+                    </h1>{" "}
+                  </div>{" "}
+                  <h1 className="pt-4">Elevate Spiritual Journeys</h1>
                 </h1>
-                <p className="mb-12 text-base !leading-relaxed text-black dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Are you dreaming of far-off destinations, exciting adventures,
-                  or simply looking to reunite with loved ones across the globe?
-                  Look no further! [Your Travel Business Name] is your trusted
-                  partner for all your travel needs. Whether you&lsquo;re
-                  planning a vacation, a business trip, or a family reunion,
-                  we&lsquo;ve got you covered.
+
+                <p className="py-4 text-[16px] text-base font-semibold !leading-relaxed text-black dark:text-body-color-dark sm:text-lg md:text-xl">
+                  Elevate your pilgrimage experience with our premier travel
+                  services. As a trusted provider, we specialize in crafting
+                  seamless Hajj and Umrah packages. From secure travel
+                  arrangements to comfortable accommodations, our offerings
+                  ensure a spiritually enriching journey. Book with us for an
+                  unparalleled blend of convenience, safety, and spiritual
+                  fulfillment.
                 </p>
-                <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                <div className="flex flex-col items-center justify-center space-y-4 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="https://nextjstemplates.com/templates/saas-starter-startup"
-                    className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    className="rounded-md bg-[#229e43] px-8  py-4 text-base font-semibold text-white duration-300 ease-in-out hover:border-[1px] hover:border-[#229e43] hover:bg-primary/80 hover:bg-white hover:text-black"
                   >
                     More info
                   </Link>

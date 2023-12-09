@@ -10,7 +10,7 @@ const sliderSettings = {
   centerMode: true,
   infinite: true,
   autoplay: true,
-  slidesToShow: 3,
+  slidesToShow: 4,
   speed: 500,
   slide: null,
   responsive: [
@@ -25,13 +25,13 @@ const sliderSettings = {
 
 const Brands = () => {
   return (
-    <section className="section-bg pt-16">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4">
+    <section className="section-bg pt-8">
+      <div className="w-full">
+        <div className=" flex flex-wrap">
+          <div className="m-auto w-[97.5%] md:w-[85%]">
             <Slider
               {...sliderSettings}
-              className="rounded-sm bg-gray-light px-8 py-8 sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]"
+              className="green-primary rounded-sm px-8 py-8 sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]"
             >
               {brandsData.map((brand) => (
                 <SingleBrand key={brand.id} brand={brand} />

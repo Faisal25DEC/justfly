@@ -56,16 +56,12 @@ const HajjUmrah = () => {
   }, []);
   return (
     <>
-      <Breadcrumb
-        pageName="Hajj & Umrah packages"
-        description="At [Business Name], we understand the profound significance of Hajj and Umrah in the lives of Muslims. These sacred pilgrimages are deeply spiritual experiences that require meticulous planning and attention to detail. That's where we come in, offering meticulously crafted Hajj and Umrah packages to ensure a seamless and spiritually enriching journey"
-      />
-      <section className="py-16 md:py-20 lg:py-28">
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap items-center">
-            <div className="w-full px-4 lg:w-1/2">
+      <section className="py-4 md:py-6">
+        <div className="w-full">
+          <div className="m-auto flex w-[97.5%] flex-wrap items-center md:w-[85%]">
+            <div className=" lg:w-1/2">
               <div
-                className="wow fadeInUp relative mx-auto mb-12 aspect-[25/24] max-w-[700px] text-center lg:m-0"
+                className="wow fadeInUp relative mx-auto mb-12 aspect-[25/24]  text-center lg:m-0"
                 data-wow-delay=".15s"
               >
                 <Image
@@ -81,7 +77,7 @@ const HajjUmrah = () => {
                 {domLoaded && (
                   <Slider
                     {...sliderSettings}
-                    className="green-primary w-full rounded-sm px-8 py-8 sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]"
+                    className="green-primary w-full rounded-sm px-8 "
                   >
                     {hajjItems.map((item) => (
                       <div className="mb-9" key={item.title}>
