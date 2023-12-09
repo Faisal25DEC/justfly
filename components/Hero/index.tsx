@@ -13,17 +13,17 @@ const Hero = () => {
         "
       >
         <div className="container">
-          <div className="-mx-4 flex flex-wrap">
+          <div className="flex flex-wrap">
             <div className=" w-[100%]">
               <div
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="w-full  py-4    text-[80px] font-bold leading-tight text-neutral-800 dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+                <h1 className="sm:leading-tightl  w-full    py-4 text-[40px] font-bold leading-tight text-neutral-800 dark:text-white  md:text-[60px] md:leading-tight">
                   <div className=" flex items-center justify-center gap-2">
                     <img
                       alt="logo"
-                      className="h-[4rem] w-[5rem]"
+                      className="hidden h-[4rem] w-[5rem] md:block"
                       src="/images/logo/logo.png"
                     />{" "}
                     <h1 className="">
@@ -35,7 +35,7 @@ const Hero = () => {
                   <h1 className="pt-4">Elevate Spiritual Journeys</h1>
                 </h1>
 
-                <p className="py-4 text-[16px] text-base font-semibold !leading-relaxed text-black dark:text-body-color-dark sm:text-lg md:text-xl">
+                <p className="py-4 text-[14px] text-base font-semibold !leading-relaxed text-black dark:text-body-color-dark sm:text-lg md:text-[16px] md:text-xl">
                   Elevate your pilgrimage experience with our premier travel
                   services. As a trusted provider, we specialize in crafting
                   seamless Hajj and Umrah packages. From secure travel

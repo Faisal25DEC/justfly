@@ -17,7 +17,7 @@ import { topDestinations } from "./data";
 
 const TopDestinations = () => {
   return (
-    <div className="section-bg r cursor-pointer pt-6">
+    <div className="section-bg-fade r cursor-pointer pt-6">
       <p className="text-green-primary text-center text-[22px] font-bold">
         Top Destinations
       </p>
@@ -71,7 +71,7 @@ const TopDestinations = () => {
                     <h4 className=" font-medium">
                       <span className="text-[18px]">Starting From</span>{" "}
                       <span className="text-[22px] text-primary">
-                        ${item.price}
+                        £{item.price}
                       </span>
                       <span className="text-[16px] font-light">/person</span>
                     </h4>

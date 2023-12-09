@@ -5,10 +5,10 @@ import featuresData from "./featuresData";
 const Features = () => {
   return (
     <>
-      <div className="section-bg">
+      <div className="section-bg-fade">
         <section
           id="features"
-          className=" m-auto w-[97.5%] py-4 md:w-[85%] md:py-8 "
+          className=" m-auto w-[97.5%] pb-12 pt-4 md:w-[85%] md:py-8 "
         >
           <div className="container">
             <SectionTitle

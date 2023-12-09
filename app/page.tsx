@@ -9,6 +9,7 @@ import InjuryAndClaims from "@/components/InjuryClaims/InjuryClaims";
 import { Metadata } from "next";
 import TopDestinations from "@/components/TopDestinations/TopDestinations";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import Packages from "@/components/Packages/Packages";
 
 export const metadata: Metadata = {
   title: "Justfly Traverls",
@@ -22,18 +23,21 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <TopDestinations />
+      <Packages />
       <Brands />
       <Features />
       <section id="hajj-umrah" className="section-bg">
         <HajjUmrah />
       </section>
-      <section id="cargo" className="section-bg">
+      <section id="cargo" className="section-bg-fade">
         <Cargo />
       </section>
       <section id="injury-claims" className="section-bg">
         <InjuryAndClaims />
       </section>
-      <Testimonials />
+      <section className="section-bg-fade">
+        <Testimonials />
+      </section>
     </>
   );
 }

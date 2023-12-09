@@ -4,7 +4,10 @@ import SectionTitle from "../../components/Common/SectionTitle";
 import { Feature } from "@/types/feature";
 import SingleFeature from "../../components/Features/SingleFeature";
 import Image from "next/image";
-import cargoPic from "../../public/images/cargo.jpg";
+import { RiTeamLine } from "react-icons/ri";
+import { AiOutlineGlobal } from "react-icons/ai";
+import { RiShip2Fill } from "react-icons/ri";
+import { MdSafetyCheck } from "react-icons/md";
 
 const Cargo = () => {
   return (
@@ -53,11 +56,36 @@ const Cargo = () => {
               />
             </div>
           </div>
-
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
-            ))}
+          <h1 className="pb-[4rem] text-center text-[18px] font-medium ">
+            Experience the epitome of{" "}
+            <span className="text-[#229e43]">Cargo</span> excellence{" "}
+          </h1>
+          <div className="flex flex-col items-center justify-center gap-4 md:h-[50vh] md:flex-row md:justify-evenly">
+            {featuresData.map((feature, idx) => {
+              const { icon, paragraph, title } = feature;
+              return (
+                <div
+                  className={`flex w-full flex-col items-center justify-center gap-4 md:h-[26vh] ${
+                    idx % 2 == 1 ? "self-start" : "self-end"
+                  }`}
+                  key={title}
+                >
+                  {icon && (
+                    <div className="flex items-center justify-center ">
+                      <div className=" flex h-[57.5px] w-[70px] items-center justify-center rounded-[2rem] bg-primary bg-opacity-10 text-primary">
+                        {icon}
+                      </div>
+                    </div>
+                  )}
+                  <h3 className=" text-xl font-bold text-black dark:text-white sm:text-lg lg:text-lg xl:text-2xl">
+                    {title}
+                  </h3>
+                  <p className="text-center text-[16px] text-base font-light leading-relaxed text-body-color">
+                    {paragraph}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -67,22 +95,30 @@ const Cargo = () => {
 
 const featuresData: Feature[] = [
   {
+    icon: <RiShip2Fill className="h-8 w-8" />,
     id: 1,
     title: "Reliable transportation",
     paragraph:
-      "We offer comprehensive cargo transportation solutions, ensuring timely and pristine delivery. Our well-maintained fleet handles diverse cargo types, guaranteeing reliable service for your shipments.",
+      "Cargo transportation solutions, ensuring timely and pristine delivery",
   },
   {
+    icon: <RiTeamLine className="h-8 w-8" />,
     id: 2,
     title: "Experienced team",
     paragraph:
-      "Our team of experienced professionals understands the intricacies of cargo logistics. We work closely with you to tailor our services to your specific requirements, offering a personalized approach to every shipment.",
+      "Professionals who understands the intricacies of cargo logistics",
   },
   {
+    icon: <AiOutlineGlobal className="h-8 w-8" />,
     id: 3,
     title: "Global reach",
-    paragraph:
-      "Whether your cargo needs to travel domestically or internationally, we've got you covered. Our extensive network of partners and agents allows us to facilitate seamless cross-border and international shipments",
+    paragraph: "Seamless cross-border and international shipments",
+  },
+  {
+    icon: <MdSafetyCheck className="h-8 w-8" />,
+    id: 4,
+    title: " Secure Handling",
+    paragraph: "Ensuring complete safety of your precious items",
   },
 ];
 

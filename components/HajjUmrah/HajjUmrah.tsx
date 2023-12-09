@@ -56,7 +56,7 @@ const HajjUmrah = () => {
   }, []);
   return (
     <>
-      <section className="py-4 md:py-8">
+      <section className="pt-8 md:py-12">
         <div className="w-full">
           <div className="m-auto flex w-[97.5%] flex-wrap items-center md:w-[85%]">
             <div className=" lg:w-1/2">
@@ -77,14 +77,14 @@ const HajjUmrah = () => {
                 {domLoaded && (
                   <Slider
                     {...sliderSettings}
-                    className="green-primary w-full rounded-sm px-8 "
+                    className=" w-full rounded-sm md:px-8 "
                   >
                     {hajjItems.map((item) => (
-                      <div className="mb-9" key={item.title}>
-                        <h3 className="mb-4 pb-4 text-center  text-[38px] font-bold text-black dark:text-white sm:text-2xl lg:text-[40px] xl:text-[40px]">
+                      <div className="pt-8" key={item.title}>
+                        <h3 className=" text-center  text-[38px] font-bold text-black dark:text-white sm:text-2xl lg:text-[40px] xl:text-[40px]">
                           {item.title}
                         </h3>
-                        <p className="text-center text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                        <p className="pt-4  text-center text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
