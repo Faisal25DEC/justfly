@@ -1,3 +1,4 @@
+"use client";
 import Brands from "@/components/Brands";
 import Cargo from "@/components/Cargo/Cargo";
 import ScrollUp from "@/components/Common/ScrollUp";
@@ -8,11 +9,11 @@ import Hero from "@/components/Hero";
 import InjuryAndClaims from "@/components/InjuryClaims/InjuryClaims";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Travel agency site",
-  description: "This is Home for Startup Nextjs Template",
-  // other metadata
-};
+// export const metadata: Metadata = {
+//   title: "Travel agency site",
+//   description: "This is Home for Startup Nextjs Template",
+//   // other metadata
+// };
 
 export default function Home() {
   return (
@@ -21,13 +22,13 @@ export default function Home() {
       <Hero />
       <Brands />
       <Features />
-      <section id="hajj-umrah">
+      <section id="hajj-umrah" className="section-bg">
         <HajjUmrah />
       </section>
-      <section id="card">
+      <section id="cargo" className="section-bg">
         <Cargo />
       </section>
-      <section id="injury-claims">
+      <section id="injury-claims" className="section-bg">
         <InjuryAndClaims />
       </section>
       <Contact />

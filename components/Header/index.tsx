@@ -2,20 +2,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import menuData from "./menuData";
 
 const Header = () => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
 
-  const [currentSection, setCurrentSection] = useState("");
+  const [currentSection, setCurrentSection] = useState("Home");
+
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
   };
 
   // Sticky Navbar
   const [sticky, setSticky] = useState(false);
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
   const handleStickyNavbar = () => {
     if (window.scrollY >= 80) {
       setSticky(true);
@@ -39,12 +45,10 @@ const Header = () => {
     }
   };
 
-  const usePathName = usePathname();
-
   return (
     <>
       <header
-        className={`header left-0 top-0 z-40 flex w-full items-center ${
+        className={`header left-0 top-0 z-40 flex w-full items-center justify-between ${
           sticky
             ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
             : "absolute bg-transparent"
@@ -54,28 +58,28 @@ const Header = () => {
           <div className="relative -mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
-                href="/"
-                className={`header-logo block w-full ${
-                  sticky ? "py-5 lg:py-2" : "py-8"
+                href="#home"
+                className={`header-logo  flex w-full items-center gap-[1px] ${
+                  sticky ? "py-4 lg:py-2" : "py-4"
                 } `}
               >
-                <Image
-                  src="/images/logo/logo-2.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="w-full dark:hidden"
-                />
-                <Image
-                  src="/images/logo/logo.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="hidden w-full dark:block"
-                />
+                {domLoaded && (
+                  <img
+                    src="/images/logo/logo.png"
+                    alt="logo"
+                    className="h-16 w-20 w-full pb-[3.5px] dark:hidden"
+                  />
+                )}
+                {domLoaded && (
+                  <img
+                    src="/images/logo/logo2.png"
+                    alt="logo"
+                    className="h-12  w-20 w-full dark:block"
+                  />
+                )}
               </Link>
             </div>
-            <div className="flex w-full items-center justify-between px-4">
+            <div className="flex items-center justify-between px-4">
               <div>
                 <button
                   onClick={navbarToggleHandler}
@@ -107,20 +111,29 @@ const Header = () => {
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  <ul className="block lg:flex lg:space-x-12">
+                  <ul className="block justify-end lg:flex lg:space-x-12 ">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
-                          <Link
-                            href={menuItem.path}
-                            className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
-                              usePathName === menuItem.path
-                                ? "text-primary dark:text-white"
-                                : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
+                          <a
+                            onClick={() => {
+                              window.location.href = menuItem.path;
+                              setCurrentSection(menuItem.title);
+                            }}
+                            className={`flex cursor-pointer py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 ${
+                              sticky ? "lg:py-[2.1rem]" : "lg-py-2"
+                            }  ${
+                              currentSection === menuItem.title &&
+                              "text-[#15a900]"
+                            }  ${
+                              currentSection === menuItem.title && "font-medium"
+                            } ${
+                              currentSection === menuItem.title &&
+                              "border-b-[1px] border-[#15a900]"
                             }`}
                           >
                             {menuItem.title}
-                          </Link>
+                          </a>
                         ) : (
                           <>
                             <p
@@ -145,28 +158,21 @@ const Header = () => {
                               }`}
                             >
                               {menuItem.submenu.map((submenuItem, index) => (
-                                <Link
-                                  href={submenuItem.path}
+                                <a
                                   key={index}
-                                  passHref
+                                  className={`block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3 `}
                                 >
-                                  <a
-                                    className={`block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3 ${
-                                      currentSection === submenuItem.title &&
-                                      "text-[#15a900]"
-                                    }`}
+                                  <p
+                                    onClick={() => {
+                                      console.log("clicke");
+                                      window.location.href = submenuItem.path;
+                                      setCurrentSection(submenuItem.title);
+                                    }}
                                   >
-                                    <p
-                                      onClick={() => {
-                                        console.log("clicke");
-                                        setCurrentSection(submenuItem.title);
-                                      }}
-                                    >
-                                      {" "}
-                                      {submenuItem.title}
-                                    </p>
-                                  </a>
-                                </Link>
+                                    {" "}
+                                    {submenuItem.title}
+                                  </p>
+                                </a>
                               ))}
                             </div>
                           </>

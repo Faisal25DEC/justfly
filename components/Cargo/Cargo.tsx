@@ -16,18 +16,23 @@ const Cargo = () => {
 
       <section className="py-16 md:py-20 lg:py-28">
         <div className="container">
-          <div className="-mx-4 mb-16 flex flex-wrap items-center md:mb-20 lg:mb-28">
+          <div className="-mx-4 mb-16 flex flex-wrap items-center justify-between md:mb-20 lg:mb-28">
             <div className="w-full px-4 py-12 lg:w-1/2">
               <SectionTitle
                 // center
-                title="Why Choose Our Cargo Services?"
+                title="Best Cargo Services"
                 paragraph="Our commitment to excellence sets us apart in the world of cargo and logistics. Here are some key reasons why you should partner with us."
                 mb="44px"
               />
             </div>
 
-            <div className="px-4 lg:w-1/2">
-              <Image src={cargoPic} alt="cargo image" />
+            <div className=" lg:w-1/2">
+              <Image
+                src={"/images/brands/cargo.png"}
+                width={700}
+                height={150}
+                alt="cargo image"
+              />
             </div>
           </div>
 

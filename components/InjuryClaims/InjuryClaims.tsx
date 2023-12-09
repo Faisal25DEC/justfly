@@ -28,10 +28,12 @@ const InjuryAndClaims = () => {
                 />
               </div>
 
-              <div className="w-full px-4 lg:w-1/2">
+              <div className="w-full max-w-[700px] px-4 lg:w-1/2">
                 <Image
-                  src={supportPic}
-                  alt="support"
+                  src={"/images/safety/safety.png"}
+                  width={500}
+                  height={200}
+                  alt="safety"
                   className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
                 />
               </div>

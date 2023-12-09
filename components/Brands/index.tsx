@@ -25,7 +25,7 @@ const sliderSettings = {
 
 const Brands = () => {
   return (
-    <section className="pt-16">
+    <section className="section-bg pt-16">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">

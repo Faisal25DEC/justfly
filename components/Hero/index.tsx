@@ -1,11 +1,14 @@
+"use client";
+import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
   return (
     <>
+      <div className="overlay-bg absolute h-[100vh] w-full bg-[url('/images/hero/travel.jpg')] bg-cover"></div>
       <section
         id="home"
-        className="relative z-10 overflow-hidden bg-white bg-[url('/images/hero/travel.jpg')] bg-cover pb-16 pt-[120px] dark:bg-gray-dark md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px]
+        className="hero-bg relative h-[100vh] overflow-hidden  pb-16 pt-[120px] dark:bg-gray-dark  md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px]
         2xl:pt-[210px]
         "
       >
@@ -16,8 +19,24 @@ const Hero = () => {
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Welcome to <span>JustFly Travels</span>
+                <h1 className="mb-5 flex items-center justify-center gap-2  text-3xl font-bold leading-tight text-neutral-800 dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+                  <Image
+                    src="/icons/hero/kaaba.png"
+                    width={50}
+                    height={50}
+                    alt="kaaba"
+                  />{" "}
+                  <h1 className="flex items-center gap-2">
+                    Welcome To{" "}
+                    <img
+                      src="/images/hero/brand-name-1.png"
+                      className="h-15 w-[10rem]"
+                    />
+                    <img
+                      src="/images/hero/brand-name-2.png"
+                      className="h-15 w-[10rem]"
+                    />
+                  </h1>
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-black dark:text-body-color-dark sm:text-lg md:text-xl">
                   Are you dreaming of far-off destinations, exciting adventures,
