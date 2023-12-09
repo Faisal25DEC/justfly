@@ -19,7 +19,7 @@ const Cargo = () => {
 
       <section className="py-4 md:py-6">
         <div className="container">
-          <div className="-mx-4 mb-16 flex flex-wrap items-center justify-between md:mb-20 lg:mb-28">
+          <div className=" mb-16 flex flex-wrap items-center justify-between md:mb-20 lg:mb-28">
             <div className="m-auto w-[97.5%] py-12 md:w-[85%] lg:w-1/2">
               <SectionTitle
                 // center
@@ -60,14 +60,12 @@ const Cargo = () => {
             Experience the epitome of{" "}
             <span className="text-[#229e43]">Cargo</span> excellence{" "}
           </h1>
-          <div className="flex flex-col items-center justify-center gap-4 md:h-[50vh] md:flex-row md:justify-evenly">
+          <div className="flex flex-col items-center justify-center gap-4  md:flex-row md:justify-evenly">
             {featuresData.map((feature, idx) => {
               const { icon, paragraph, title } = feature;
               return (
                 <div
-                  className={`flex w-full flex-col items-center justify-center gap-4 md:h-[26vh] ${
-                    idx % 2 == 1 ? "self-start" : "self-end"
-                  }`}
+                  className={`flex w-full flex-col items-center justify-center gap-4`}
                   key={title}
                 >
                   {icon && (
