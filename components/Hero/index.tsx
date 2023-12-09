@@ -5,10 +5,10 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <>
-      <div className="overlay-bg absolute h-[100vh] w-full bg-[url('/images/hero/travel.jpg')] bg-cover"></div>
+      <div className="overlay-bg absolute h-[80vh] w-full bg-[url('/images/hero/travel.jpg')] bg-cover"></div>
       <section
         id="home"
-        className="hero-bg relative h-[100vh] overflow-hidden  pb-16 pt-[120px] dark:bg-gray-dark  md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px]
+        className="hero-bg relative h-[80vh] overflow-hidden  pb-16 pt-[120px] dark:bg-gray-dark  md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px]
         2xl:pt-[210px]
         "
       >
@@ -19,7 +19,7 @@ const Hero = () => {
                 className="wow fadeInUp mx-auto max-w-[800px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="sm:leading-tightl  w-full    py-4 text-[40px] font-bold leading-tight text-neutral-800 dark:text-white  md:text-[60px] md:leading-tight">
+                <h1 className="sm:leading-tightl  w-full    py-4 text-[40px] font-bold leading-tight text-neutral-800 dark:text-white  md:text-[70px] md:leading-tight">
                   <div className=" flex items-center justify-center gap-2">
                     <img
                       alt="logo"
@@ -34,15 +34,6 @@ const Hero = () => {
                   </div>{" "}
                   <h1 className="pt-4">Elevate Spiritual Journeys</h1>
                 </h1>
-
-                <div className="flex flex-col items-center justify-center space-y-4 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                  <Link
-                    href="https://nextjstemplates.com/templates/saas-starter-startup"
-                    className="rounded-md bg-[#229e43] px-8  py-4 text-base font-semibold text-white duration-300 ease-in-out hover:border-[1px] hover:border-[#229e43] hover:bg-primary/80 hover:bg-white hover:text-black"
-                  >
-                    More info
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
