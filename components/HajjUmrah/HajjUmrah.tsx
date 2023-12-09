@@ -56,19 +56,19 @@ const HajjUmrah = () => {
   }, []);
   return (
     <>
-      <section className="py-4 md:py-6">
+      <section className="py-4 md:py-8">
         <div className="w-full">
           <div className="m-auto flex w-[97.5%] flex-wrap items-center md:w-[85%]">
             <div className=" lg:w-1/2">
               <div
-                className="wow fadeInUp relative mx-auto mb-12 aspect-[25/24]  text-center lg:m-0"
+                className="wow fadeInUp relative mx-auto mb-8 aspect-[5/3] text-center lg:m-0"
                 data-wow-delay=".15s"
               >
                 <Image
-                  src="/images/hajj/kaaba.png"
+                  src="/images/hajj/kaaba.jpg"
                   alt="about image"
                   fill
-                  className="drop-shadow-three"
+                  className=" rounded-lg drop-shadow-three "
                 />
               </div>
             </div>

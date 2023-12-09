@@ -6,27 +6,23 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="wow fadeInUp relative z-10 bg-white pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24"
+        className="section-bg wow fadeInUp relative z-10  pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24"
         data-wow-delay=".1s"
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 md:w-1/2 md:px-12 lg:w-4/12 xl:w-5/12">
               <div className="mb-12 max-w-[360px] lg:mb-16">
-                <Link href="/" className="mb-8 inline-block">
-                  <Image
-                    src="/images/logo/logo-2.svg"
+                <Link href="/" className="mb-8 flex items-center gap-2">
+                  <img
+                    src="/images/logo/logo.png"
                     alt="logo"
-                    className="w-full dark:hidden"
-                    width={140}
-                    height={30}
+                    className="h-[4rem] w-[5rem] "
                   />
-                  <Image
-                    src="/images/logo/logo.svg"
+                  <img
+                    src="/images/logo/logo2.png"
                     alt="logo"
-                    className="hidden w-full dark:block"
-                    width={140}
-                    height={30}
+                    className="h-[4rem] w-[6rem] "
                   />
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
