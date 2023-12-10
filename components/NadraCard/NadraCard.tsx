@@ -42,7 +42,7 @@ const NadraCard = () => {
       <Breadcrumb pageName="Nadra Card Services" />
       <Breadcrumb pageName="Nadra Card Services" />
       <div className="m-auto flex w-[97.5%] flex-col items-center justify-between gap-8 md:w-[85%] md:flex-row">
-        <div className="text-left">
+        <div className="text-center md:text-left">
           <h1 className="text-[40px] font-bold">
             <span className="text-green-primary">Nadra</span> Card Services
           </h1>

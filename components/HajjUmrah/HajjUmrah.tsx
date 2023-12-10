@@ -37,13 +37,13 @@ const hajjItems = [
     title: "Umrah Packages",
     desc: (
       <div>
-        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+        <p className="pt-8 text-center text-[20px] text-neutral-600 md:text-left">
           Begin your Umrah journey with our tailored packages. We offer diverse
           options, from economy to premium, ensuring a seamless and enriching
           pilgrimage for individuals and families.
         </p>
 
-        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+        <p className="pt-8 text-center text-[20px] text-neutral-600 md:text-left">
           Our packages include accommodations, transportation, and guided tours
           for a worry-free spiritual experience.
         </p>
@@ -54,12 +54,12 @@ const hajjItems = [
     title: "Hajj Packages",
     desc: (
       <div>
-        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+        <p className="pt-8 text-center text-[20px] text-neutral-600 md:text-left">
           Experience the significance of Hajj with our meticulously crafted
           packages. We handle the details, so you can focus on your spiritual
           journey.
         </p>
-        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+        <p className="pt-8 text-center text-[20px] text-neutral-600 md:text-left">
           Our offerings include expert guidance, luxury accommodations, and more
           for a fulfilling pilgrimage.
         </p>
@@ -70,7 +70,7 @@ const hajjItems = [
     title: "Customized Packages",
     desc: (
       <div>
-        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+        <p className="pt-8 text-center text-[20px] text-neutral-600 md:text-left">
           Personalize your Hajj or Umrah journey with our custom packages. Our
           dedicated team will collaborate with you to create a pilgrimage that
           aligns with your needs, be it special accommodations, unique travel
@@ -133,7 +133,7 @@ const HajjUmrah = () => {
                   >
                     {hajjItems.map((item) => (
                       <div className="pt-8" key={item.title}>
-                        <h3 className=" text-left  text-[40px] font-bold text-black dark:text-white sm:text-2xl lg:text-[40px] xl:text-[40px]">
+                        <h3 className="text-center text-[40px]  font-bold text-black dark:text-white sm:text-2xl md:text-left lg:text-[40px] xl:text-[40px]">
                           <span className="text-green-primary">
                             {item.title.split(" ")[0]}
                           </span>{" "}

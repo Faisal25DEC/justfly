@@ -6,7 +6,8 @@ const Footer = () => {
   return (
     <>
       <footer
-        id="footer"
+        id="footer
+        "
         className=" wow fadeInUp section-bg   pt-16 dark:bg-gray-dark  md:pt-20 lg:pt-24"
         data-wow-delay=".1s"
       >
@@ -136,11 +137,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex w-[85%]  items-center justify-between  py-4">
+          <div className="flex w-[85%] flex-col items-start justify-start py-4 md:flex-row md:items-center  md:justify-between">
             <p className="text-base text-body-color dark:text-white">
               Ⓒ 2023 Justfly All Rights Reserved
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-start justify-start gap-4 py-4 md:flex-row md:items-center md:py-0">
               <p>•Terms and Conditions</p>
               <p>•Privacy Policy</p>
             </div>

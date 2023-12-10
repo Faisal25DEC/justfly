@@ -8,10 +8,10 @@ const MoneyTransfer = () => {
       <Breadcrumb pageName="Money Transfer" />
       <div className="m-auto flex w-[97.5%] flex-col items-center justify-center md:w-[85%]  md:flex-row md:justify-between">
         <div className="px-6">
-          <h1 className="text-[40px] font-bold">
+          <h1 className="text-center text-[40px] font-bold md:text-left">
             <span className="text-green-primary">Money</span> Transfers
           </h1>
-          <p className="pt-6 font-medium text-neutral-600">
+          <p className="pt-6 text-center font-medium text-neutral-600 md:text-left">
             Sending money to your loved ones worldwide has never been easier. At
             Justfly Travels, we offer reliable and efficient Money Transfer
             services with unbeatable rates, ensuring your hard-earned money

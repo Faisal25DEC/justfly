@@ -24,7 +24,7 @@ const Cargo = () => {
               <SectionTitle
                 // center
                 title={
-                  <h1 className="pb-4 text-left  text-[36px] font-bold">
+                  <h1 className="pb-4 text-center text-[36px]  font-bold md:text-left">
                     Effortless{" "}
                     <span className="text-green-primary">
                       Parcel and Business Cargo
@@ -34,7 +34,7 @@ const Cargo = () => {
                 }
                 paragraph={
                   <div>
-                    <p className="text-left font-medium text-neutral-700">
+                    <p className="text-center font-medium text-neutral-700 md:text-left">
                       Sending a parcel back home or managing your business cargo
                       has never been easier. At{" "}
                       <span className="text-green-primary font-bold ">
@@ -47,7 +47,7 @@ const Cargo = () => {
                       believe that staying connected with your loved ones or
                       managing your business shouldn&apos;t break the bank.
                     </p>
-                    <p className="pt-4 text-left font-medium text-neutral-600">
+                    <p className="pt-4 text-center font-medium text-neutral-600 md:text-left">
                       <span className="cursor-pointer border-[1px] border-b-[#1b9d3d] pb-[1px] pr-1 text-[16px] font-bold text-[#1b9d3d]">
                         Contact us
                       </span>{" "}

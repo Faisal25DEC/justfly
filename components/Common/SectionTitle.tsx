@@ -21,9 +21,8 @@ const SectionTitle = ({
         className={`w-full ${center ? "mx-auto text-center" : ""} ${className}`}
       >
         {title}
-        <p className="text-center !leading-relaxed text-body-color md:text-lg">
-          {paragraph}
-        </p>
+
+        {paragraph}
       </div>
     </>
   );

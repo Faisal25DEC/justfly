@@ -36,7 +36,7 @@ const InjuryAndClaims = () => {
       <section className="py-4 md:py-8 ">
         <div className="container">
           <div className="border-b border-body-color/[.15] dark:border-white/[.15] ">
-            <div className="-mx-4 flex flex-wrap items-center">
+            <div className=" flex flex-wrap items-center">
               <Slider
                 {...sliderSettings}
                 className="  w-[100%] rounded-sm md:w-[50%] md:px-8"
@@ -81,13 +81,13 @@ export default InjuryAndClaims;
 const injuryAndClaimDesc = [
   {
     title: (
-      <h1 className="pb-4 text-left text-[36px] font-bold">
+      <h1 className="pb-4 text-left text-center text-[36px] font-bold md:text-left">
         <span className="text-green-primary">Expert</span> Injury Claims
         Services
       </h1>
     ),
     desc: (
-      <p className="text-left">
+      <p className="text-center text-neutral-600 md:text-left">
         Accidents can happen when you least expect them, whether it&apos;s at
         the workplace or on the road. When you find yourself injured due to
         circumstances beyond your control, seeking compensation and justice is
@@ -109,13 +109,13 @@ const injuryAndClaimDesc = [
   },
   {
     title: (
-      <h1 className="pb-4 text-left text-[36px] font-bold">
+      <h1 className="pb-4 text-left text-center text-[36px] font-bold md:text-left">
         <span className="text-green-primary">Car Accidents</span>(Not Your
         Fault)
       </h1>
     ),
     desc: (
-      <p className="text-left text-[22px] font-medium">
+      <p className="text-center text-[22px] font-medium text-neutral-600 md:text-left">
         Car accidents can be traumatic, especially when they&apos;re not your
         fault. We&apos;re here to provide you with the support and guidance you
         need to file an injury claim and recover the damages you&apos;re
@@ -125,12 +125,12 @@ const injuryAndClaimDesc = [
   },
   {
     title: (
-      <h1 className="pb-4 text-left text-[36px] font-bold">
+      <h1 className="pb-4 text-left text-center text-[36px] font-bold md:text-left">
         <span className="text-green-primary">Workplace Accidents</span>
       </h1>
     ),
     desc: (
-      <p className="text-left text-[22px] font-medium">
+      <p className="text-center text-[22px] font-medium text-neutral-600 md:text-left">
         We understand the physical, emotional, and financial toll that workplace
         accidents can take, and we&apos;re dedicated to ensuring you receive the
         compensation you deserve.
