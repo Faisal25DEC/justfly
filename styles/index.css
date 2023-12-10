@@ -74,3 +74,25 @@ body {
 .card-shadow {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #77ca9b #d2dfd5;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #d2dfd5;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #77ca9b;
+  border-radius: 5px;
+  border: 3px solid #bbeccc;
+}
