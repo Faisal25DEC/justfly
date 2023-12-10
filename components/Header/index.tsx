@@ -111,7 +111,7 @@ const Header = () => {
                       : "invisible top-[120%] opacity-0"
                   }`}
                 >
-                  <ul className="block justify-end lg:flex lg:space-x-12 ">
+                  <ul className="block justify-end md:flex md:gap-[1rem]  ">
                     {menuData.map((menuItem, index) => (
                       <li key={index} className="group relative">
                         {menuItem.path ? (
@@ -120,7 +120,7 @@ const Header = () => {
                               window.location.href = menuItem.path;
                               setCurrentSection(menuItem.title);
                             }}
-                            className={`flex cursor-pointer py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 ${
+                            className={`flex cursor-pointer py-2 text-[14px] text-base font-semibold lg:mr-0 lg:inline-flex lg:px-0 ${
                               sticky ? "lg:py-[2.1rem]" : "lg-py-2"
                             }  ${
                               currentSection === menuItem.title &&

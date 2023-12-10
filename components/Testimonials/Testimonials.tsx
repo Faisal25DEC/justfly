@@ -18,9 +18,6 @@ import { testitmonialsData } from "./testimonialsData";
 const Testimonials = () => {
   return (
     <div className="section-bg r cursor-pointer pt-6">
-      <p className="text-green-primary text-center text-[22px] font-bold">
-        What They Say
-      </p>
       <h1 className="pt-6 text-center text-[36px] font-semibold">
         What Our <span className="text-green-primary">Customers</span> Say
       </h1>

@@ -35,13 +35,13 @@ export default function Home() {
       <section id="cargo" className="section-bg-fade">
         <Cargo />
       </section>
-      <section id="injury-claims" className="section-bg">
+      <section id="injury-claims" className="section-bg relative">
         <InjuryAndClaims />
       </section>
-      <section id="nadra-card" className="section-bg-fade">
+      <section id="nadra-services" className="section-bg-fade relative py-12">
         <NadraCard />
       </section>
-      <section id="money-transfer" className="section-bg">
+      <section id="money-transfer" className="section-bg relative">
         <MoneyTransfer />
       </section>
       <section className="section-bg-fade">

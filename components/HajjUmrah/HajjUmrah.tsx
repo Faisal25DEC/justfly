@@ -95,11 +95,12 @@ const HajjUmrah = () => {
   useEffect(() => {
     setTimeout(() => {
       setDomLoaded(true);
-    }, 500);
+    }, 10);
   }, []);
   return (
     <>
-      <section className="pt-8 md:py-12">
+      <Breadcrumb pageName="Hajj and Umrah" />
+      <section className="py-8 md:py-12">
         <div className="w-full">
           <div className="m-auto flex w-[97.5%] flex-wrap items-center md:w-[85%]">
             <div className=" lg:w-1/2">

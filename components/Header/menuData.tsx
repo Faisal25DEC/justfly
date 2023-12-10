@@ -25,6 +25,17 @@ const menuData: Menu[] = [
     path: "#injury-claims",
     newTab: false,
   },
+  {
+    id: 4,
+    title: "Nadra Services",
+    path: "#nadra-services",
+  },
+  {
+    id: 5,
+    title: "Money Transfer",
+    path: "#money-transfer",
+  },
+  { id: 6, title: "Contact us: 0161 459 4752", path: "#footer" },
 ];
 
 export default menuData;

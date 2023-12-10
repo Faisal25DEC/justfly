@@ -3,6 +3,7 @@ import { MdOutlineAddCard } from "react-icons/md";
 import { SiNewrelic } from "react-icons/si";
 import { GrDocumentUpdate } from "react-icons/gr";
 import { GrDocumentUser } from "react-icons/gr";
+import Breadcrumb from "../Common/Breadcrumb";
 
 const NadraCard = () => {
   const cardData = [
@@ -38,10 +39,9 @@ const NadraCard = () => {
 
   return (
     <>
-      <div className="m-auto flex w-[97.5%] flex-col items-center justify-between gap-8 md:w-[85%] md:flex-row-reverse">
-        <div className="w-[60%]">
-          <img src="/images/nadra/card.png" alt="" className="w-full " />
-        </div>
+      <Breadcrumb pageName="Nadra Card Services" />
+      <Breadcrumb pageName="Nadra Card Services" />
+      <div className="m-auto flex w-[97.5%] flex-col items-center justify-between gap-8 md:w-[85%] md:flex-row">
         <div className="text-left">
           <h1 className="text-[40px] font-bold">
             <span className="text-green-primary">Nadra</span> Card Services
@@ -57,14 +57,17 @@ const NadraCard = () => {
             completing the necessary paperwork efficiently and hassle-free.
           </p>
         </div>
+        <div className="w-[60%]">
+          <img src="/images/nadra/card.png" alt="" className="w-full " />
+        </div>
       </div>
       <div className="m-auto w-[97.5%]  py-8  md:w-[85%] ">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 place-items-center gap-y-4 md:grid-cols-2">
           {cardData.map((feature, idx) => {
             const { icon, paragraph, title } = feature;
             return (
               <div
-                className={`flex  w-full flex-col items-center justify-center gap-4`}
+                className={`flex max-w-[400px] flex-col items-center justify-center gap-4`}
                 key={title}
               >
                 {icon && (

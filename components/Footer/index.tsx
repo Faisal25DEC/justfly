@@ -6,6 +6,7 @@ const Footer = () => {
   return (
     <>
       <footer
+        id="footer"
         className=" wow fadeInUp section-bg   pt-16 dark:bg-gray-dark  md:pt-20 lg:pt-24"
         data-wow-delay=".1s"
       >

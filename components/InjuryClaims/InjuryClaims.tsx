@@ -31,6 +31,7 @@ const InjuryAndClaims = () => {
   return (
     <>
       <Breadcrumb pageName="Injury claims" />
+      <Breadcrumb pageName="Injury claims" />
 
       <section className="py-4 md:py-8 ">
         <div className="container">
@@ -151,7 +152,7 @@ const featuresData = [
     ),
     title: "Reporting an Incident",
     paragraph:
-      "In case of unexpected incidents while traveling, contact our 24/7 support at +01258925. Swift communication enables efficient assistance, ensuring your safety and minimizing disruptions to your travel experience.",
+      "In case of unexpected incidents while traveling, contact our 24/7 support at 0161 459 4752. Swift communication enables efficient assistance, ensuring your safety and minimizing disruptions to your travel experience.",
   },
   {
     id: 1,
