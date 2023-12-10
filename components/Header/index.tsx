@@ -5,7 +5,8 @@ import { useParams, usePathname } from "next/navigation";
 import { RefObject, useEffect, useRef, useState } from "react";
 import menuData from "./menuData";
 import { BsPhone } from "react-icons/bs";
-
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 const Header = () => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -18,11 +19,23 @@ const Header = () => {
 
   // Sticky Navbar
   const [sticky, setSticky] = useState(false);
-  const [domLoaded, setDomLoaded] = useState(false);
+
+  const [smc, setSmc] = useState(false);
 
   useEffect(() => {
-    setDomLoaded(true);
+    // Function to update smc based on window.innerWidth
+    const updateSmc = () => {
+      setSmc(window.innerWidth <= 1240);
+    };
+    updateSmc();
+
+    window.addEventListener("resize", updateSmc);
+
+    return () => {
+      window.removeEventListener("resize", updateSmc);
+    };
   }, []);
+
   const handleStickyNavbar = () => {
     if (window.scrollY >= 80) {
       setSticky(true);
@@ -84,155 +97,73 @@ const Header = () => {
       setOpenIndex(index);
     }
   };
+  console.log(navbarOpen);
 
   return (
     <>
       <header
-        className={`header left-0 top-0 z-40 flex w-full items-center justify-between ${
+        className={`${
           sticky
-            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition dark:bg-gray-dark dark:shadow-sticky-dark"
+            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition "
             : "absolute bg-transparent"
-        }`}
+        } top-0 z-[40] h-[max-content] w-[100%] bg-transparent py-4`}
       >
-        <div className="w-full">
-          <div className="relative m-auto  flex w-[97.5%] items-center justify-between md:w-[85%]">
-            <div className="   max-w-full  xl:mr-12">
-              <Link
-                href="#home"
-                className={`header-logo  flex w-full items-center gap-[1px] ${
-                  sticky ? "py-4 lg:py-2" : "py-4"
-                } `}
-              >
-                {domLoaded && (
-                  <img
-                    src="/images/logo/logo.png"
-                    alt="logo"
-                    className="h-[3rem] w-[3rem] w-full pb-[3.5px] dark:hidden md:h-[5rem] md:w-[5rem]"
-                  />
-                )}
-                {domLoaded && (
-                  <img
-                    src="/images/logo/logo2.png"
-                    alt="logo"
-                    className="h-12 w-[4.25rem] w-full  dark:block md:h-14 md:w-[5.25rem]"
-                  />
-                )}
-              </Link>
-            </div>
-            <div className="flex w-[75%] items-center justify-between">
-              <div>
-                <button
-                  onClick={navbarToggleHandler}
-                  id="navbarToggler"
-                  aria-label="Mobile Menu"
-                  className="absolute right-4 top-1/2 block translate-y-[-50%] rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
-                >
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[7px] rotate-45" : " "
-                    }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? "opacity-0 " : " "
-                    }`}
-                  />
-                  <span
-                    className={`relative my-1.5 block h-0.5 w-[30px] bg-black transition-all duration-300 dark:bg-white ${
-                      navbarOpen ? " top-[-8px] -rotate-45" : " "
-                    }`}
-                  />
-                </button>
-                <nav
-                  id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-[100%] lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
-                    navbarOpen
-                      ? "visibility top-full opacity-100"
-                      : "invisible top-[120%] opacity-0"
+        <div className="mdc:w-[85%] m-auto flex w-[92.5%] items-center justify-between">
+          <div className="flex items-center justify-between gap-[1px] ">
+            <img
+              src="/images/logo/logo.png"
+              alt=""
+              className="h-[4rem] w-[5rem]"
+            />
+            <img
+              src="/images/logo/logo2.png"
+              alt=""
+              className="h-[4.5rem] w-[6rem]"
+            />
+          </div>
+
+          <div
+            className={`mdc:static mdc:h-auto mdc:flex-row mdc:items-center mdc:bg-transparent mdc:p-0 mdc:rounded-[0] fixed right-[4%] top-[10vh] flex h-[max-content] flex-col gap-[1.25rem] rounded-xl bg-white p-4 ${
+              smc && `${navbarOpen ? "flex" : "hidden"}  transition-custom`
+            }`}
+          >
+            {menuData.map((item) => {
+              return (
+                <a
+                  className={`text-[16px] font-medium hover:text-[#1b9d3d] ${
+                    currentSection === item.path &&
+                    "text-green-primary border-b-[1px] border-b-[#1b9d3d]"
+                  } ${
+                    item.path === "#footer" &&
+                    "text-green-primary mdc:hidden block"
                   }`}
+                  key={item.title}
+                  href={item.path}
+                  onClick={() => {
+                    setCurrentSection(item.path);
+                    window.location.href = item.path;
+                  }}
                 >
-                  <ul className="block justify-end md:flex md:gap-[1rem]  ">
-                    {menuData.map((menuItem, index) => (
-                      <li key={index} className="group relative">
-                        {menuItem.path ? (
-                          <a
-                            onClick={() => {
-                              window.location.href = menuItem.path;
-                              setCurrentSection("#" + menuItem.path);
-                            }}
-                            className={`flex cursor-pointer py-2 text-[14px] text-base font-semibold lg:mr-0 lg:inline-flex lg:px-0 ${
-                              sticky ? "lg:py-[2.1rem]" : "lg-py-2"
-                            }  ${
-                              currentSection === menuItem.path &&
-                              "text-[#15a900]"
-                            }  ${
-                              currentSection === menuItem.path && "font-medium"
-                            } ${
-                              currentSection === menuItem.path &&
-                              "border-b-[1px] border-[#15a900]"
-                            } ${
-                              menuItem.path === "#footer" &&
-                              "text-green-primary"
-                            } ${menuItem.path === "#footer" && "flex-grow"}`}
-                          >
-                            {menuItem.path === "#footer" ? (
-                              <div className="flex items-center gap-[1px] md:pl-[125px]">
-                                {" "}
-                                <BsPhone className="h-4 w-4" /> {menuItem.title}
-                              </div>
-                            ) : (
-                              menuItem.title
-                            )}
-                          </a>
-                        ) : (
-                          <>
-                            <p
-                              onClick={() => handleSubmenu(index)}
-                              className="flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
-                            >
-                              {menuItem.title}
-                              <span className="pl-3">
-                                <svg width="25" height="24" viewBox="0 0 25 24">
-                                  <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M6.29289 8.8427C6.68342 8.45217 7.31658 8.45217 7.70711 8.8427L12 13.1356L16.2929 8.8427C16.6834 8.45217 17.3166 8.45217 17.7071 8.8427C18.0976 9.23322 18.0976 9.86639 17.7071 10.2569L12 15.964L6.29289 10.2569C5.90237 9.86639 5.90237 9.23322 6.29289 8.8427Z"
-                                    fill="currentColor"
-                                  />
-                                </svg>
-                              </span>
-                            </p>
-                            <div
-                              className={`submenu relative left-0 top-full rounded-sm bg-white transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[250px] lg:p-4 lg:opacity-0 lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${
-                                openIndex === index ? "block" : "hidden"
-                              }`}
-                            >
-                              {menuItem.submenu.map((submenuItem, index) => (
-                                <a
-                                  key={index}
-                                  className={`block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3 `}
-                                >
-                                  <p
-                                    onClick={() => {
-                                      console.log("clicke");
-                                      window.location.href = submenuItem.path;
-                                      setCurrentSection(submenuItem.title);
-                                    }}
-                                  >
-                                    {" "}
-                                    {submenuItem.title}
-                                  </p>
-                                </a>
-                              ))}
-                            </div>
-                          </>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </div>
-            </div>
+                  {item.title}
+                </a>
+              );
+            })}
+          </div>
+
+          <div className="transition-custom text-green-primary mdc:flex hidden cursor-pointer items-center gap-[4px] font-semibold">
+            <BsPhone className="h-4 w-4" /> <a>0161 459 4752</a>
+          </div>
+          <div
+            className="mdc:hidden block cursor-pointer"
+            onClick={() => {
+              setNavbarOpen((prev) => !prev);
+            }}
+          >
+            {navbarOpen ? (
+              <IoMdClose className="ransition-custom h-6 w-6" />
+            ) : (
+              <GiHamburgerMenu className="ransition-custom h-6 w-6" />
+            )}
           </div>
         </div>
       </header>

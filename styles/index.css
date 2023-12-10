@@ -96,3 +96,16 @@ body {
   border-radius: 5px;
   border: 3px solid #bbeccc;
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+.transition-custom {
+  animation: fadeIn 0.3s ease-in-out; /* Adjust the duration and easing function as needed */
+}
