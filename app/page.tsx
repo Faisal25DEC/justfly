@@ -10,6 +10,8 @@ import { Metadata } from "next";
 import TopDestinations from "@/components/TopDestinations/TopDestinations";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Packages from "@/components/Packages/Packages";
+import NadraCard from "@/components/NadraCard/NadraCard";
+import MoneyTransfer from "@/components/MoneyTransfer/MoneyTransfer";
 
 export const metadata: Metadata = {
   title: "Justfly Traverls",
@@ -23,17 +25,24 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <TopDestinations />
-      <Packages />
+
       <Brands />
       <Features />
       <section id="hajj-umrah" className="section-bg">
         <HajjUmrah />
       </section>
+      <Packages />
       <section id="cargo" className="section-bg-fade">
         <Cargo />
       </section>
       <section id="injury-claims" className="section-bg">
         <InjuryAndClaims />
+      </section>
+      <section id="nadra-card" className="section-bg-fade">
+        <NadraCard />
+      </section>
+      <section id="money-transfer" className="section-bg">
+        <MoneyTransfer />
       </section>
       <section className="section-bg-fade">
         <Testimonials />

@@ -1,17 +1,33 @@
+"use client";
 import Breadcrumb from "@/components/Common/Breadcrumb";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { Metadata } from "next";
 import Image from "next/image";
 import SingleFeature from "../../components/Features/SingleFeature";
 import SectionTitle from "../../components/Common/SectionTitle";
 import supportPic from "../../public/images/support.jpg";
-
-export const metadata: Metadata = {
-  title: "About Page | Free Next.js Template for Startup and SaaS",
-  description: "This is About Page for Startup Nextjs Template",
-  // other metadata
-};
+import { BsArrowRight } from "react-icons/bs";
 
 const InjuryAndClaims = () => {
+  const sliderSettings = {
+    className: "center",
+    centerMode: false,
+    infinite: true,
+    autoplay: true,
+    slidesToShow: 1,
+    speed: 500,
+    slide: null,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
   return (
     <>
       <Breadcrumb pageName="Injury claims" />
@@ -20,31 +36,22 @@ const InjuryAndClaims = () => {
         <div className="container">
           <div className="border-b border-body-color/[.15] dark:border-white/[.15] ">
             <div className="-mx-4 flex flex-wrap items-center">
-              <div className="w-full px-4 py-12 md:px-12 lg:w-1/2">
-                <SectionTitle
-                  title={
-                    <h1 className="pb-4 text-center text-[36px] font-bold">
-                      Your <span className="text-green-primary">Safety</span> Is
-                      Our Priority
-                    </h1>
-                  }
-                  paragraph={
-                    <p className="text-center font-medium ">
-                      At Justfly, our commitment to your well-being extends
-                      beyond seamless travel experiences. We understand that
-                      unexpected events can disrupt even the most carefully
-                      planned journeys. In such instances, our dedicated team is
-                      here to provide guidance and support, navigating you
-                      through the necessary steps to address any unforeseen
-                      changes to your travel plans. Whether it is a sudden
-                      change in itinerary, flight disruptions, or other
-                      unexpected challenges, rest assured that your comfort and
-                      safety remain our top priority.
-                    </p>
-                  }
-                  mb="44px"
-                />
-              </div>
+              <Slider
+                {...sliderSettings}
+                className="  w-[100%] rounded-sm md:w-[50%] md:px-8"
+              >
+                {injuryAndClaimDesc.map((item, idx) => {
+                  const { title, desc } = item;
+                  return (
+                    <div
+                      key={idx}
+                      className="w-full px-4 py-12 md:px-12 lg:w-1/2"
+                    >
+                      <SectionTitle title={title} paragraph={desc} mb="44px" />
+                    </div>
+                  );
+                })}
+              </Slider>
 
               <div className="w-full max-w-[700px] px-4 lg:w-1/2">
                 <Image
@@ -69,6 +76,67 @@ const InjuryAndClaims = () => {
 };
 
 export default InjuryAndClaims;
+
+const injuryAndClaimDesc = [
+  {
+    title: (
+      <h1 className="pb-4 text-left text-[36px] font-bold">
+        <span className="text-green-primary">Expert</span> Injury Claims
+        Services
+      </h1>
+    ),
+    desc: (
+      <p className="text-left">
+        Accidents can happen when you least expect them, whether it&apos;s at
+        the workplace or on the road. When you find yourself injured due to
+        circumstances beyond your control, seeking compensation and justice is
+        essential. At{" "}
+        <span className="text-green-primary">Justfly Travels</span>, we&apos;re
+        here to assist you with our expert Injury Claims services.
+        <div className="flex items-center gap-2 pt-4">
+          <h1 className="text-[30px]">
+            We{" "}
+            <span className="text-green-primary font-semibold">Specialize</span>{" "}
+            in{" "}
+          </h1>
+          <div>
+            <BsArrowRight color="#1b9d3d" className="h-8 w-8 font-bold" />
+          </div>
+        </div>
+      </p>
+    ),
+  },
+  {
+    title: (
+      <h1 className="pb-4 text-left text-[36px] font-bold">
+        <span className="text-green-primary">Car Accidents</span>(Not Your
+        Fault)
+      </h1>
+    ),
+    desc: (
+      <p className="text-left text-[22px] font-medium">
+        Car accidents can be traumatic, especially when they&apos;re not your
+        fault. We&apos;re here to provide you with the support and guidance you
+        need to file an injury claim and recover the damages you&apos;re
+        entitled to.
+      </p>
+    ),
+  },
+  {
+    title: (
+      <h1 className="pb-4 text-left text-[36px] font-bold">
+        <span className="text-green-primary">Workplace Accidents</span>
+      </h1>
+    ),
+    desc: (
+      <p className="text-left text-[22px] font-medium">
+        We understand the physical, emotional, and financial toll that workplace
+        accidents can take, and we&apos;re dedicated to ensuring you receive the
+        compensation you deserve.
+      </p>
+    ),
+  },
+];
 
 const featuresData = [
   {

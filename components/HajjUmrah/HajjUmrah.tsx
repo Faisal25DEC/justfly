@@ -6,6 +6,7 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import Image from "next/image";
 import { Metadata } from "next";
 import { useEffect, useState } from "react";
+import { BsCheckCircle } from "react-icons/bs";
 
 export const metadata: Metadata = {
   title: "About Page | Free Next.js Template for Startup and SaaS",
@@ -34,15 +35,57 @@ const sliderSettings = {
 const hajjItems = [
   {
     title: "Umrah Packages",
-    desc: `Embark on the sacred journey of Umrah with our meticulously tailored packages, designed to cater to the unique needs of individuals and families. Choose from a diverse range of options, spanning economy, standard, and premium, ensuring a seamless and spiritually enriching experience for every pilgrim. Our packages encompass comfortable accommodations, convenient transportation, and guided tours to the holiest sites, providing you with a worry-free pilgrimage that allows you to focus entirely on your spiritual journey.`,
+    desc: (
+      <div>
+        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+          Begin your Umrah journey with our tailored packages. We offer diverse
+          options, from economy to premium, ensuring a seamless and enriching
+          pilgrimage for individuals and families.
+        </p>
+
+        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+          Our packages include accommodations, transportation, and guided tours
+          for a worry-free spiritual experience.
+        </p>
+      </div>
+    ),
   },
   {
     title: "Hajj Packages",
-    desc: `Immerse yourself in the profound significance of the annual pilgrimage with our intricately crafted Hajj packages. We prioritize every aspect of your journey, allowing you to concentrate wholeheartedly on your religious duties. Our comprehensive Hajj packages include meticulously planned itineraries, luxury accommodations, group activities, and expert guidance to ensure a smooth and fulfilling pilgrimage. Let us handle the details, so you can focus on the spiritual essence of this sacred journey, forging memories that will last a lifetime.`,
+    desc: (
+      <div>
+        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+          Experience the significance of Hajj with our meticulously crafted
+          packages. We handle the details, so you can focus on your spiritual
+          journey.
+        </p>
+        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+          Our offerings include expert guidance, luxury accommodations, and more
+          for a fulfilling pilgrimage.
+        </p>
+      </div>
+    ),
   },
   {
     title: "Customized Packages",
-    desc: `Tailor your Hajj or Umrah experience to your specific requirements and preferences with our customized packages. Reach out to our dedicated team, and we will work closely with you to create a personalized pilgrimage journey that aligns perfectly with your needs. Whether you seek special accommodations, unique travel arrangements, or specific tour inclusions, we are committed to turning your aspirations into reality. Your spiritual fulfillment is our priority, and our bespoke packages ensure an experience that resonates with your individuality and devotion.`,
+    desc: (
+      <div>
+        <p className="text-medium pt-8 text-[20px] text-neutral-600">
+          Personalize your Hajj or Umrah journey with our custom packages. Our
+          dedicated team will collaborate with you to create a pilgrimage that
+          aligns with your needs, be it special accommodations, unique travel
+          arrangements, or specific tour inclusions.
+        </p>
+      </div>
+    ),
+  },
+];
+export const hajjImages = [
+  {
+    src: "/images/hajj/kaaba.jpg",
+  },
+  {
+    src: "/images/hajj/nabawi.avif",
   },
 ];
 
@@ -60,17 +103,25 @@ const HajjUmrah = () => {
         <div className="w-full">
           <div className="m-auto flex w-[97.5%] flex-wrap items-center md:w-[85%]">
             <div className=" lg:w-1/2">
-              <div
-                className="wow fadeInUp relative mx-auto mb-8 aspect-[5/3] text-center lg:m-0"
-                data-wow-delay=".15s"
+              <Slider
+                {...sliderSettings}
+                className=" w-full rounded-sm md:px-2 "
               >
-                <Image
-                  src="/images/hajj/kaaba.jpg"
-                  alt="about image"
-                  fill
-                  className=" rounded-lg drop-shadow-three "
-                />
-              </div>
+                {hajjImages.map((item) => (
+                  <div
+                    key={item.src}
+                    className="wow fadeInUp relative mx-auto mb-8 aspect-[5/3] text-center lg:m-0"
+                    data-wow-delay=".15s"
+                  >
+                    <Image
+                      src={item.src}
+                      alt="about image"
+                      fill
+                      className=" rounded-lg drop-shadow-three "
+                    />
+                  </div>
+                ))}
+              </Slider>
             </div>
             <div className="w-full px-4 lg:w-1/2">
               <div className="wow fadeInUp max-w-[670px]" data-wow-delay=".2s">
@@ -81,12 +132,14 @@ const HajjUmrah = () => {
                   >
                     {hajjItems.map((item) => (
                       <div className="pt-8" key={item.title}>
-                        <h3 className=" text-center  text-[38px] font-bold text-black dark:text-white sm:text-2xl lg:text-[40px] xl:text-[40px]">
-                          {item.title}
+                        <h3 className=" text-left  text-[40px] font-bold text-black dark:text-white sm:text-2xl lg:text-[40px] xl:text-[40px]">
+                          <span className="text-green-primary">
+                            {item.title.split(" ")[0]}
+                          </span>{" "}
+                          {item.title.split(" ")[1]}
                         </h3>
-                        <p className="pt-4  text-center text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                          {item.desc}
-                        </p>
+
+                        {item.desc}
                       </div>
                     ))}
                   </Slider>

@@ -20,20 +20,20 @@ const Hero = () => {
                 data-wow-delay=".2s"
               >
                 <h1 className="sm:leading-tightl  w-full    py-4 text-[40px] font-bold leading-tight text-neutral-800 dark:text-white  md:text-[70px] md:leading-tight">
-                  <div className=" flex items-center justify-center gap-2">
+                  <div className=" flex items-center justify-center gap-[2px] pt-6">
                     <img
                       alt="logo"
-                      className="hidden h-[4rem] w-[5rem] md:block"
+                      className="hidden h-[5rem] w-[6rem] pb-[1px] md:block"
                       src="/images/logo/logo.png"
                     />{" "}
-                    <h1 className="pt-6">
+                    <h1 className="">
                       <span className="text-green-primary">
                         JUST FLY TRAVELS
                       </span>
                     </h1>{" "}
                   </div>{" "}
-                  <h1 className="pt-4 text-[35px] md:text-[55px]">
-                    Your Journey, Our Expertise.
+                  <h1 className="pl-6 pt-8 text-[35px] md:text-[55px]">
+                    Your Journey, Our Expertise
                   </h1>
                 </h1>
               </div>

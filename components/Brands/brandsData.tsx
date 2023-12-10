@@ -4,15 +4,15 @@ import { Brand } from "@/types/brand";
 const brandsData: Brand[] = [
   {
     id: 1,
-    name: "United Airlines",
+    name: "Saudi Arilines",
     href: "https://united.com",
-    image: "/images/brands/united_airlines.svg",
+    image: "/images/brands/saudi.png",
   },
   {
     id: 2,
     name: "Emirates",
     href: "https://emirates.com",
-    image: "/images/brands/emirates.svg",
+    image: "/images/brands/emirates.png",
   },
   {
     id: 3,
@@ -28,9 +28,21 @@ const brandsData: Brand[] = [
   },
   {
     id: 5,
-    name: "American Airlines",
+    name: "Turkish Airlines",
     href: "https://aa.com",
-    image: "/images/brands/american_airlines.svg",
+    image: "/images/brands/turkey.png",
+  },
+  {
+    id: 6,
+    name: "Etihad Airways",
+    href: "https://aa.com",
+    image: "/images/brands/etihad.png",
+  },
+  {
+    id: 7,
+    name: "Qatar Airways",
+    href: "https://aa.com",
+    image: "/images/brands/qatar.png",
   },
 ];
 

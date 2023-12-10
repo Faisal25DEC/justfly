@@ -24,24 +24,41 @@ const Cargo = () => {
               <SectionTitle
                 // center
                 title={
-                  <h1 className="pb-4 text-center text-[36px] font-bold">
-                    Best <span className="text-green-primary">Cargo</span>{" "}
-                    Services
+                  <h1 className="pb-4 text-left  text-[36px] font-bold">
+                    Effortless{" "}
+                    <span className="text-green-primary">
+                      Parcel and Business Cargo
+                    </span>{" "}
+                    Services Worldwide
                   </h1>
                 }
                 paragraph={
-                  <p className="font-medium">
-                    In the realm of cargo and logistics, our unwavering
-                    commitment to excellence stands as the cornerstone of our
-                    distinction. Choosing us as your logistics partner ensures
-                    an elevated experience marked by precision, global
-                    connectivity, cutting-edge technology, tailored solutions,
-                    sustainability, and a culture of continuous improvement. Our
-                    dedication to setting industry standards reflects not just a
-                    commitment but a guiding principle embedded in every facet
-                    of our service, promising you a partnership that transcends
-                    expectations
-                  </p>
+                  <div>
+                    <p className="text-left font-medium text-neutral-700">
+                      Sending a parcel back home or managing your business cargo
+                      has never been easier. At{" "}
+                      <span className="text-green-primary font-bold ">
+                        Justfly Travels
+                      </span>
+                      , we take pride in providing hassle-free solutions for
+                      sending your love and care to your family and friends in
+                      Pakistan and worldwide, all while offering competitive
+                      rates that are often more favorable than other options. We
+                      believe that staying connected with your loved ones or
+                      managing your business shouldn&apos;t break the bank.
+                    </p>
+                    <p className="pt-4 text-left font-medium text-neutral-600">
+                      <span className="cursor-pointer border-[1px] border-b-[#1b9d3d] pb-[1px] pr-1 text-[16px] font-bold text-[#1b9d3d]">
+                        Contact us
+                      </span>{" "}
+                      today to learn more about our services and how{" "}
+                      <span className="text-green-primary font-bold ">
+                        Justfly Travels
+                      </span>{" "}
+                      can help you with dependable and cost-effective Cargo
+                      solutions
+                    </p>
+                  </div>
                 }
                 mb="44px"
               />
@@ -56,10 +73,7 @@ const Cargo = () => {
               />
             </div>
           </div>
-          <h1 className="pb-[4rem] text-center text-[18px] font-medium ">
-            Experience the epitome of{" "}
-            <span className="text-[#229e43]">Cargo</span> excellence{" "}
-          </h1>
+
           <div className="flex flex-col items-center justify-center gap-4  md:flex-row md:justify-evenly">
             {featuresData.map((feature, idx) => {
               const { icon, paragraph, title } = feature;

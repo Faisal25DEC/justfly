@@ -17,6 +17,12 @@ const sliderSettings = {
     {
       breakpoint: 1024,
       settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
         slidesToShow: 1,
       },
     },
@@ -25,13 +31,13 @@ const sliderSettings = {
 
 const Brands = () => {
   return (
-    <section className="section-bg pt-8">
+    <section className="section-bg green-primary pt-8">
       <div className="w-full">
         <div className=" flex flex-wrap">
           <div className="m-auto w-[97.5%] md:w-[85%]">
             <Slider
               {...sliderSettings}
-              className="green-primary rounded-sm px-8 py-8 sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]"
+              className=" rounded-sm px-4 py-8 md:py-[40px]   2xl:py-[60px]"
             >
               {brandsData.map((brand) => (
                 <SingleBrand key={brand.id} brand={brand} />
