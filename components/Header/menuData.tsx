@@ -35,7 +35,7 @@ const menuData: Menu[] = [
     title: "Money Transfer",
     path: "#money-transfer",
   },
-  { id: 6, title: "Contact us: 0161 459 4752", path: "#footer" },
+  { id: 6, title: "0161 459 4752", path: "#footer" },
 ];
 
 export default menuData;

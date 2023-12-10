@@ -42,11 +42,11 @@ const NadraCard = () => {
       <Breadcrumb pageName="Nadra Card Services" />
       <Breadcrumb pageName="Nadra Card Services" />
       <div className="m-auto flex w-[97.5%] flex-col items-center justify-between gap-8 md:w-[85%] md:flex-row">
-        <div className="text-center md:text-left">
+        <div className="w-full text-center md:w-[50%] md:text-left">
           <h1 className="text-[40px] font-bold">
             <span className="text-green-primary">Nadra</span> Card Services
           </h1>
-          <p className="pt-4 font-medium leading-[1.75rem] text-neutral-600">
+          <p className="pt-4 text-[20px] font-medium text-neutral-600 md:text-[22px]">
             Ensure your <span className="text-green-primary">Nadra</span> card
             is up-to-date and hassle-free with{" "}
             <span className="text-green-primary font-bold">
@@ -57,7 +57,7 @@ const NadraCard = () => {
             completing the necessary paperwork efficiently and hassle-free.
           </p>
         </div>
-        <div className="w-[60%]">
+        <div className=" w-[100%] md:w-[40%]">
           <img src="/images/nadra/card.png" alt="" className="w-full " />
         </div>
       </div>

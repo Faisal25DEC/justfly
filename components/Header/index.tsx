@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { RefObject, useEffect, useRef, useState } from "react";
 import menuData from "./menuData";
+import { BsPhone } from "react-icons/bs";
 
 const Header = () => {
   // Navbar toggle
@@ -118,7 +119,7 @@ const Header = () => {
                 )}
               </Link>
             </div>
-            <div className="flex items-center justify-between ">
+            <div className="flex w-[75%] items-center justify-between">
               <div>
                 <button
                   onClick={navbarToggleHandler}
@@ -144,7 +145,7 @@ const Header = () => {
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
+                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-[100%] lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                     navbarOpen
                       ? "visibility top-full opacity-100"
                       : "invisible top-[120%] opacity-0"
@@ -169,9 +170,19 @@ const Header = () => {
                             } ${
                               currentSection === menuItem.path &&
                               "border-b-[1px] border-[#15a900]"
-                            }`}
+                            } ${
+                              menuItem.path === "#footer" &&
+                              "text-green-primary"
+                            } ${menuItem.path === "#footer" && "flex-grow"}`}
                           >
-                            {menuItem.title}
+                            {menuItem.path === "#footer" ? (
+                              <div className="flex items-center gap-[1px] md:pl-[125px]">
+                                {" "}
+                                <BsPhone className="h-4 w-4" /> {menuItem.title}
+                              </div>
+                            ) : (
+                              menuItem.title
+                            )}
                           </a>
                         ) : (
                           <>
