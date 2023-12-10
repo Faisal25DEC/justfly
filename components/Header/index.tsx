@@ -106,14 +106,14 @@ const Header = () => {
                   <img
                     src="/images/logo/logo.png"
                     alt="logo"
-                    className="h-[5rem] w-[5rem] w-full pb-[3.5px] dark:hidden"
+                    className="h-[3rem] w-[3rem] w-full pb-[3.5px] dark:hidden md:h-[5rem] md:w-[5rem]"
                   />
                 )}
                 {domLoaded && (
                   <img
                     src="/images/logo/logo2.png"
                     alt="logo"
-                    className="h-14  w-[5.25rem] w-full dark:block"
+                    className="h-12 w-[4.25rem] w-full  dark:block md:h-14 md:w-[5.25rem]"
                   />
                 )}
               </Link>
