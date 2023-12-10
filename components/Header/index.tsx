@@ -9,7 +9,7 @@ const Header = () => {
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
 
-  const [currentSection, setCurrentSection] = useState("Home");
+  const [currentSection, setCurrentSection] = useState("#home");
 
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
@@ -32,6 +32,45 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
   });
+
+  useEffect(() => {
+    const sectionIds = [
+      "home",
+      ,
+      "hajj-umrah",
+      "cargo",
+      "injury-claims",
+      "nadra-services",
+      "money-transfer",
+      "footer",
+    ];
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(entry.target.id);
+          setCurrentSection("#" + entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust as needed
+    });
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   console.log(currentSection);
 
@@ -118,17 +157,17 @@ const Header = () => {
                           <a
                             onClick={() => {
                               window.location.href = menuItem.path;
-                              setCurrentSection(menuItem.title);
+                              setCurrentSection("#" + menuItem.path);
                             }}
                             className={`flex cursor-pointer py-2 text-[14px] text-base font-semibold lg:mr-0 lg:inline-flex lg:px-0 ${
                               sticky ? "lg:py-[2.1rem]" : "lg-py-2"
                             }  ${
-                              currentSection === menuItem.title &&
+                              currentSection === menuItem.path &&
                               "text-[#15a900]"
                             }  ${
-                              currentSection === menuItem.title && "font-medium"
+                              currentSection === menuItem.path && "font-medium"
                             } ${
-                              currentSection === menuItem.title &&
+                              currentSection === menuItem.path &&
                               "border-b-[1px] border-[#15a900]"
                             }`}
                           >
