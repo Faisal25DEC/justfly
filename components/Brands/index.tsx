@@ -7,7 +7,7 @@ import SingleBrand from "./SingleBrand";
 import { motion } from "framer-motion";
 const variants = {
   initial: {
-    x: 500,
+    x: 250,
     opacity: 0,
   },
   animate: {

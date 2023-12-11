@@ -18,7 +18,7 @@ import { topDestinations } from "./data";
 import { motion } from "framer-motion";
 const variants = {
   initial: {
-    x: -500,
+    x: -200,
     opacity: 0.1,
   },
   animate: {

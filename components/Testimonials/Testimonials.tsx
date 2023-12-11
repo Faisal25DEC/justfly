@@ -13,11 +13,11 @@ import "swiper/css/bundle";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { testitmonialsData } from "./testimonialsData";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 // import "./swiper-cards.css";
 const variants = {
   initial: {
-    x: 500,
+    x: 200,
     opacity: 0.5,
   },
   animate: {
@@ -32,11 +32,21 @@ const variants = {
 
 const Testimonials = () => {
   return (
-    <motion.div variants = {variants} whileInView = "animate" initial = "initial" className="section-bg r cursor-pointer pt-6">
+    <motion.div
+      variants={variants}
+      whileInView="animate"
+      initial="initial"
+      className="section-bg r cursor-pointer pt-6"
+    >
       <h1 className="pt-6 text-center text-[36px] font-semibold">
         What Our <span className="text-green-primary">Customers</span> Say
       </h1>
-      <section className="m-auto w-[97.5%] pb-6 pt-12 md:w-[85%]">
+      <motion.div
+        variants={variants}
+        whileInView="animate"
+        initial="initial"
+        className="m-auto w-[97.5%] pb-6 pt-12 md:w-[85%]"
+      >
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           autoplay={{
@@ -90,7 +100,7 @@ const Testimonials = () => {
             );
           })}
         </Swiper>
-      </section>
+      </motion.div>
     </motion.div>
   );
 };
