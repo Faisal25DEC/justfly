@@ -13,11 +13,26 @@ import "swiper/css/bundle";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { testitmonialsData } from "./testimonialsData";
+import {motion} from 'framer-motion'
 // import "./swiper-cards.css";
+const variants = {
+  initial: {
+    x: 500,
+    opacity: 0.5,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const Testimonials = () => {
   return (
-    <div className="section-bg r cursor-pointer pt-6">
+    <motion.div variants = {variants} whileInView = "animate" initial = "initial" className="section-bg r cursor-pointer pt-6">
       <h1 className="pt-6 text-center text-[36px] font-semibold">
         What Our <span className="text-green-primary">Customers</span> Say
       </h1>
@@ -76,7 +91,7 @@ const Testimonials = () => {
           })}
         </Swiper>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

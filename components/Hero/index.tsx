@@ -1,12 +1,35 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+export const variants = {
+  initial: {
+    y: -300,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const Hero = () => {
   return (
     <>
-      <div className="overlay-bg absolute h-[82.5vh] w-full bg-[url('/images/hero/travel.jpg')] bg-cover"></div>
-      <section
+      <motion.div
+        whileInView="animate"
+        initial="initial"
+        variants={variants}
+        className="overlay-bg absolute h-[82.5vh] w-full bg-[url('/images/hero/travel.jpg')] bg-cover"
+      ></motion.div>
+      <motion.section
+        whileInView="animate"
+        initial="initial"
+        variants={variants}
         id="home"
         className="hero-bg relative h-[82.5vh] overflow-hidden  pb-16 pt-[120px] dark:bg-gray-dark  md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px]
         2xl:pt-[210px]
@@ -281,7 +304,7 @@ const Hero = () => {
             </defs>
           </svg>
         </div> */}
-      </section>
+      </motion.section>
     </>
   );
 };

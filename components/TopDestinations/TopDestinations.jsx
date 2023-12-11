@@ -15,9 +15,29 @@ import "swiper/css/scrollbar";
 // import "./swiper-cards.css";
 import { topDestinations } from "./data";
 
+import { motion } from "framer-motion";
+const variants = {
+  initial: {
+    x: -500,
+    opacity: 0.1,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.95,
+      staggerChildren: 0.1,
+    },
+  },
+};
 const TopDestinations = () => {
   return (
-    <div className="section-bg-fade r cursor-pointer pt-6">
+    <motion.div
+      whileInView="animate"
+      initial="initial"
+      variants={variants}
+      className="section-bg-fade r cursor-pointer pt-6"
+    >
       <p className="text-green-primary text-center text-[22px] font-bold">
         Top Destinations
       </p>
@@ -82,7 +102,7 @@ const TopDestinations = () => {
           })}
         </Swiper>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

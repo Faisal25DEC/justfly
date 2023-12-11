@@ -1,3 +1,4 @@
+"use client";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 import SectionTitle from "../../components/Common/SectionTitle";
@@ -8,6 +9,21 @@ import { RiTeamLine } from "react-icons/ri";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { RiShip2Fill } from "react-icons/ri";
 import { MdSafetyCheck } from "react-icons/md";
+import { motion } from "framer-motion";
+const variants = {
+  initial: {
+    x: 300,
+    opacity: 0.9,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const Cargo = () => {
   return (
@@ -64,14 +80,19 @@ const Cargo = () => {
               />
             </div>
 
-            <div className=" lg:w-1/2">
+            <motion.div
+              whileInView="animate"
+              initial="initial"
+              variants={variants}
+              className=" lg:w-1/2"
+            >
               <Image
                 src={"/images/brands/cargo.png"}
                 width={700}
                 height={150}
                 alt="cargo image"
               />
-            </div>
+            </motion.div>
           </div>
 
           <div className="flex flex-col items-center justify-center gap-4  md:flex-row md:justify-evenly">

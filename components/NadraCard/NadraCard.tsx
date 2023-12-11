@@ -1,10 +1,26 @@
+"use client";
 import React from "react";
 import { MdOutlineAddCard } from "react-icons/md";
 import { SiNewrelic } from "react-icons/si";
 import { GrDocumentUpdate } from "react-icons/gr";
 import { GrDocumentUser } from "react-icons/gr";
 import Breadcrumb from "../Common/Breadcrumb";
+import { motion } from "framer-motion";
 
+const variants = {
+  initial: {
+    x: 300,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
+    },
+  },
+};
 const NadraCard = () => {
   const cardData = [
     {
@@ -41,7 +57,12 @@ const NadraCard = () => {
     <>
       <Breadcrumb pageName="Nadra Card Services" />
       <Breadcrumb pageName="Nadra Card Services" />
-      <div className="m-auto flex w-[97.5%] flex-col items-center justify-between gap-8 md:w-[85%] md:flex-row">
+      <motion.div
+        variants={variants}
+        whileInView={"animate"}
+        initial="initial"
+        className="m-auto flex w-[97.5%] flex-col items-center justify-between gap-8 md:w-[85%] md:flex-row"
+      >
         <div className="w-full text-center md:w-[50%] md:text-left">
           <h1 className="text-[40px] font-bold">
             <span className="text-green-primary">Nadra</span> Card Services
@@ -60,8 +81,13 @@ const NadraCard = () => {
         <div className=" w-[100%] md:w-[40%]">
           <img src="/images/nadra/card.png" alt="" className="w-full " />
         </div>
-      </div>
-      <div className="m-auto w-[97.5%]  py-8  md:w-[85%] ">
+      </motion.div>
+      <motion.div
+        variants={variants}
+        whileInView={"animate"}
+        initial="initial"
+        className="m-auto w-[97.5%]  py-8  md:w-[85%] "
+      >
         <div className="grid grid-cols-1 place-items-center gap-y-4 md:grid-cols-2">
           {cardData.map((feature, idx) => {
             const { icon, paragraph, title } = feature;
@@ -87,7 +113,7 @@ const NadraCard = () => {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

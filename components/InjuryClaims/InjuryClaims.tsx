@@ -9,7 +9,22 @@ import SingleFeature from "../../components/Features/SingleFeature";
 import SectionTitle from "../../components/Common/SectionTitle";
 import supportPic from "../../public/images/support.jpg";
 import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 
+const variants = {
+  initial: {
+    x: -300,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      staggerChildren: 0.1,
+    },
+  },
+};
 const InjuryAndClaims = () => {
   const sliderSettings = {
     className: "center",
@@ -33,7 +48,12 @@ const InjuryAndClaims = () => {
       <Breadcrumb pageName="Injury claims" />
       <Breadcrumb pageName="Injury claims" />
 
-      <section className="py-4 md:py-8 ">
+      <motion.div
+        initial="initial"
+        whileInView={"animate"}
+        variants={variants}
+        className="py-4 md:py-8 "
+      >
         <div className="container">
           <div className="border-b border-body-color/[.15] dark:border-white/[.15] ">
             <div className=" flex flex-wrap items-center">
@@ -71,7 +91,7 @@ const InjuryAndClaims = () => {
             ))}
           </div>
         </div>
-      </section>
+      </motion.div>
     </>
   );
 };

@@ -4,6 +4,21 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SingleBrand from "./SingleBrand";
+import { motion } from "framer-motion";
+const variants = {
+  initial: {
+    x: 500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.75,
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 const sliderSettings = {
   className: "center",
@@ -31,7 +46,12 @@ const sliderSettings = {
 
 const Brands = () => {
   return (
-    <section className="section-bg green-primary pt-8">
+    <motion.div
+      whileInView="animate"
+      initial="initial"
+      variants={variants}
+      className="section-bg green-primary pt-8"
+    >
       <div className="w-full">
         <div className=" flex flex-wrap">
           <div className="m-auto w-[97.5%] md:w-[85%]">
@@ -46,7 +66,7 @@ const Brands = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.div>
   );
 };
 
