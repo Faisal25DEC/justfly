@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import RotatingImage from "../RotatingImage/RotatingImage";
 export const variants = {
   initial: {
     y: -300,
@@ -35,21 +36,21 @@ const Hero = () => {
         2xl:pt-[210px]
         "
       >
-        <div className="container">
+        <div className="m-auto w-[97.5%] md:w-[85%]">
           <div className="flex flex-wrap">
             <div className=" w-[100%]">
               <div
-                className="wow fadeInUp mx-auto max-w-[800px] text-center"
+                className="wow fadeInUp mx-auto text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="sm:leading-tightl  w-full    py-4 text-[40px] font-bold leading-tight text-neutral-800 dark:text-white  md:text-[70px] md:leading-tight">
+                <h1 className="py-4 text-[40px] font-bold leading-tight text-neutral-800 dark:text-white sm:leading-tight  md:text-[70px] md:leading-tight">
                   <div className=" flex items-center justify-center gap-[2px] pt-6">
                     <img
                       alt="logo"
                       className="hidden h-[5rem] w-[6rem] pb-[1px] md:block"
                       src="/images/logo/logo.png"
                     />{" "}
-                    <h1 className="">
+                    <h1 className="md:text-[57.5px] lg:text-[70px]">
                       <span className="text-green-primary">
                         JUST FLY TRAVELS
                       </span>
