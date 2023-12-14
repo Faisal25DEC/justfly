@@ -1,8 +1,6 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import RotatingImage from "../RotatingImage/RotatingImage";
+import { BsPhone } from "react-icons/bs";
 export const variants = {
   initial: {
     y: -300,
@@ -44,7 +42,7 @@ const Hero = () => {
                 data-wow-delay=".2s"
               >
                 <h1 className="py-4 text-[40px] font-bold leading-tight text-neutral-800 dark:text-white sm:leading-tight  md:text-[70px] md:leading-tight">
-                  <div className=" flex items-center justify-center gap-[2px] pt-6">
+                  <div className=" flex items-center justify-center gap-[2px] pt-6 md:pt-0">
                     <img
                       alt="logo"
                       className="hidden h-[5rem] w-[6rem] pb-[1px] md:block"
@@ -58,6 +56,9 @@ const Hero = () => {
                   </div>{" "}
                   <h1 className="pl-6 pt-8 text-[35px] md:text-[55px]">
                     Your Journey, Our Expertise
+                  </h1>
+                  <h1 className="text-green-primary flex items-center justify-center pt-6 text-[27.5px] md:text-[37.5px]">
+                    <BsPhone /> 0161 459 4752
                   </h1>
                 </h1>
               </div>

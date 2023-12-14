@@ -11,7 +11,7 @@ const Footer = () => {
         data-wow-delay=".1s"
       >
         <div className="m-auto w-[97.5%] md:w-[85%]">
-          <div className=" flex flex-wrap">
+          <div className="flex flex-col flex-wrap items-start md:flex-row md:items-start">
             <div className="w-full md:w-1/2  lg:w-4/12 xl:w-5/12">
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 flex items-center gap-2">
@@ -26,10 +26,19 @@ const Footer = () => {
                     className="h-[4rem] w-[6rem] "
                   />
                 </Link>
-                <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  Call Us At:{" "}
-                  <span className="text-[#229e43]">0161 459 4752</span>
-                </p>
+                <div className="flex flex-col gap-4 pl-4">
+                  <p className="text-base leading-relaxed text-body-color dark:text-body-color-dark">
+                    Call Us At:{" "}
+                    <span className="text-[#229e43]">0161 459 4752</span>
+                  </p>
+                  <p className="text-green-primary font-medium">
+                    <span className="text-body-color">Email: </span>{" "}
+                    infojustflytavel@gmail.com
+                  </p>
+                  <p className="font-medium text-body-color">
+                    150 Heywood St, Bury BL9 7DY
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -136,13 +145,13 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex w-[85%] flex-col items-start justify-start py-4 md:flex-row md:items-center  md:justify-between">
+          <div className="flex flex-col items-start justify-start gap-4 py-4 pl-4 md:flex-row md:items-center  md:justify-between md:gap-0 md:pl-0">
             <p className="text-base text-body-color dark:text-white">
               Ⓒ 2023 Justfly All Rights Reserved
             </p>
-            <div className="flex flex-col items-start justify-start gap-4 py-4 md:flex-row md:items-center md:py-0">
-              <p>•Terms and Conditions</p>
-              <p>•Privacy Policy</p>
+            <div className="flex flex-col items-start justify-start gap-4 py-4 text-body-color md:flex-row md:items-center md:py-0">
+              <p>Terms and Conditions</p>
+              <p>Privacy Policy</p>
             </div>
           </div>
         </div>
