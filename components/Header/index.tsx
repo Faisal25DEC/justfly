@@ -62,7 +62,7 @@ const Header = () => {
   };
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
-  });
+  }, []);
 
   useEffect(() => {
     const sectionIds = [
@@ -115,14 +115,14 @@ const Header = () => {
   console.log(navbarOpen);
 
   return (
-    <>
+    <div>
       <motion.header
         variants={variants}
         initial="initial"
         whileInView="animate"
         className={`${
           sticky
-            ? "fixed z-[9999] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition "
+            ? "fixed z-[9999] w-[100%] bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm transition "
             : "absolute bg-transparent"
         } top-0 z-[40] h-[max-content] w-[100%] bg-transparent py-4`}
       >
@@ -185,7 +185,7 @@ const Header = () => {
           </div>
         </div>
       </motion.header>
-    </>
+    </div>
   );
 };
 
