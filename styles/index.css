@@ -8,8 +8,12 @@
   scroll-behavior: smooth;
 }
 
-html {
+html,
+body {
   overflow-x: hidden;
+}
+body {
+  position: relative;
 }
 
 .overlay-bg {
